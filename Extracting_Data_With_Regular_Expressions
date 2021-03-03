@@ -1,0 +1,13 @@
+import re                                         #importing regular expressions re
+file = input('Enter text file: ')                 #asking user for text file
+fh = open(file)                                   #opening the file
+sum = 0                                           #assigning sum to 0
+for line in fh:                                   #reading through the lines in the file
+    #line = line.rstrip()
+    x = re.findall('[0-9]+', line)                #using findall module and extracting numbers as list of strings
+    # print(x)                                    #we can see there are many empty lists 
+    if len(x) > 0:                                #checking with the len function
+        for i in x:                               # using loop extracting the strings
+            sum = sum + int(i)                    #we canot ad number to a string so use int() and converted to integer
+
+print(sum)
